@@ -1,8 +1,15 @@
-var i = 0
-function takeANumber(deliLine, name) {
+var i = 0;
+var ticketNumber = 0;
+/*(function takeANumber(deliLine, name) {
  deliLine.push(name);
   var deliGreeting = "Welcome, " + name + ". You are number " + deliLine.length + " in line.";
   return deliGreeting;
+}
+*/
+function takeANumber(deliLine){
+  ticketNumber++;
+  deliLine.push(ticketNumber);
+  return `Welcome! You are ticket number ${ticketNumber}, and you are number ${deliLine.length} in line.`
 }
 
 function nowServing (deliLine) {
@@ -20,6 +27,7 @@ function currentLine(deliLine) {
   var lineList = "";
   
   if(deliLine.length>0){
+    
     for (i=0;i<deliLine.length-1;i++){
       lineList += " " + parseInt(i+1) + ". " + deliLine[i] + ",";
     }
